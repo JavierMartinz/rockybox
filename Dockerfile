@@ -18,7 +18,3 @@ RUN sudo wget https://repo.percona.com/apt/percona-release_0.1-4.$(lsb_release -
     && sudo docker-php-ext-install bcmath \
     && sudo docker-php-ext-install pdo_mysql \
     && curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-
-# Start MySQL without root password
-COPY ./start.sh /start.sh
-CMD ["/start.sh"]
