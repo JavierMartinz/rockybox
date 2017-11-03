@@ -20,4 +20,5 @@ RUN sudo wget https://repo.percona.com/apt/percona-release_0.1-4.$(lsb_release -
     && curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 # Start MySQL without root password
-CMD ["sudo", "service", "mysql", "start"]
+COPY ./start.sh /start.sh
+CMD ["/start.sh"]
